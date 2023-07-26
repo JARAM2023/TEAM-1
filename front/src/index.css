@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Do-Hyeon';
+  src: url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+}
