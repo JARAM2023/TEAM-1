@@ -1,8 +1,27 @@
 import { useEffect, useState } from "react"
-
+import { useLocation } from "react-router-dom"
 export const Day = () => {
+    const arr = ['일', '월', '화', '수', '목', '금', '토']
+    const dates = new Date().toLocaleDateString()
     const [data, setData] = useState([])
     const [datas, setDatas] = useState([])
+    const location = useLocation()
+    const [dt, setDt] = useState(location.state.dt)
+    const [date, setDate] = useState([])
+    function calc() {
+        let i = 0
+        let result = []
+        let today = Date.parse(dates)
+        for(i=0; i<7; i++){
+            if(dt[i].bool == true){
+                result.push(new Date(today))
+            }
+            today = today + 86400000
+        }
+        setDate(result)
+        console.log(date)
+        }
+      
     useEffect(() => {
         let result = []
         for(let i = 0; i < 17; i++){
@@ -12,12 +31,17 @@ export const Day = () => {
         
     }, [])
     useEffect(() => {
+        calc()
+    }, [dt])
+    useEffect(() => {
         let result = []
         setDatas([])
-        result.push(data)
-        result.push(data)
+        for(let i = 0; i < date.length; i++){
+            result.push(data)
+        }
         console.log(result)
         setDatas(result)
+        calc()
     }, [data])
     function datasss(id, state, index, index2) {
         let result = []
@@ -55,7 +79,7 @@ export const Day = () => {
             <div className="flex justify-center"> 
                 {datas.map((data1, index) => (
             <div className="flex-none mx-10 mt-5">
-                {index == 0? <div className="font-bold"> 7/29 토 </div>: <div className="font-bold"> 7/30 일 </div>}
+                <div className="font-bold"> {date[index].getMonth()+1}/{date[index].getDate()} {arr[date[index].getDay()]} </div>
             
             {data1.map((dat, index2) => (
             <div className="flex">
