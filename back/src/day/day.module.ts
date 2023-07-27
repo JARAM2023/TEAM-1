@@ -3,6 +3,7 @@ import { DayController } from './controllers/day.controller';
 import { DayService } from './services/day.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Days, daySchema } from './day.schema';
+import { DaysRepository } from './day.repository';
 @Module({
   imports: [
     MongooseModule.forFeature([
@@ -13,6 +14,6 @@ import { Days, daySchema } from './day.schema';
     ]),
   ],
   controllers: [DayController],
-  providers: [DayService],
+  providers: [DayService, DaysRepository],
 })
 export class DayModule {}

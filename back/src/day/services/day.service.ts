@@ -1,12 +1,15 @@
 import { Injectable } from '@nestjs/common';
+import { DaysRepository } from '../day.repository';
+import { DayRequestDto } from '../dto/days.request.dto';
 
 @Injectable()
 export class DayService {
+  constructor(private readonly dayRepository: DaysRepository) {}
   async dayCanculate() {
     return '계산';
   }
 
-  async addDay(body: any) {
-    return '가능한 요일을 db에 추가';
+  async addDays(body: DayRequestDto) {
+    return await this.dayRepository.addDays(body);
   }
 }
