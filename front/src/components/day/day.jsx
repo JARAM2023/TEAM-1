@@ -66,8 +66,8 @@ export const Day = () => {
     }
     console.log(datas)
     return (
-      <div className="w-full max-h-96">
-          <div className="relative w-[95%] h-[45rem] bg-white mx-auto rounded-lg border border-black">
+      <div className="w-full min-h-[480px] min-w-[1200px]">
+          <div className="relative w-[95%] h-[45rem] bg-white mx-auto rounded-lg border border-black min-w-[900px]">
             <div className="flex justify-center">
                 <div className="font-do text-4xl font-bold pt-10">스케줄</div>
             </div>

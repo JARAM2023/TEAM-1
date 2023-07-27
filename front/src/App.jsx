@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-    <div className="App h-full min-h-[50%]">
+    <div className="h-full min-h-[50%] min-w-[50%]">
       <BrowserRouter>
         <Header />
         <Routes>

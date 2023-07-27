@@ -40,7 +40,7 @@ export const Week = () => {
       console.log(select)
     }, [select])
     return (
-      <div className="w-full max-h-96">
+      <div className="w-full min-h-[480px] min-w-[1000px]">
           <div className="w-[95%] h-[40rem] bg-white mx-auto rounded-lg border border-black">
             <div className="w-fit mx-auto font-do text-4xl font-bold pt-10">7월 셋째주</div>
             <div className="flex">
