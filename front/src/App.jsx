@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Week, Header } from "./components"
+import { Week, Header, Day } from "./components"
 
 function App() {
 
@@ -9,7 +9,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Week />} />
+          <Route path="/week" element={<Week />} />
+          <Route path="/day" element={<Day />} />
         </Routes>
       </BrowserRouter>
     </div>
